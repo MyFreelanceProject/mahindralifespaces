@@ -1,0 +1,36 @@
+.navbar {
+	font-size: 1.6rem;
+
+	.dropdown-item {
+		font-size: 1.6rem;
+	}
+
+	.navbar-collapse {
+		justify-content: flex-end;
+		padding-right: 10rem;
+	}
+
+	.nav-item {
+		margin: 0 1rem;
+
+		&:hover {
+			border-bottom: 1px solid red;
+		}
+
+		.nav-link {
+			color: white;
+		}
+	}
+
+	.navbar-text {
+		display: flex;
+		font-size: 1.6rem;
+		align-items: center;
+		cursor: pointer;
+		color: green;
+
+		&:hover {
+			border-bottom: 1px solid red;
+		}
+	}
+}

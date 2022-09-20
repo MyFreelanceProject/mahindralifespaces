@@ -1,0 +1,109 @@
+@import "variables";
+
+@font-face {
+	font-family: "SourceSansPro-Black-900";
+	src: local("SourceSansPro-Black-900"),
+		url("./assets/fonts/SourceSansPro-Black.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-BlackItalic-900";
+	src: local("SourceSansPro-BlackItalic-900"),
+		url("./assets/fonts/SourceSansPro-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-Bold-700";
+	src: local("SourceSansPro-Bold-700"),
+		url("./assets/fonts/SourceSansPro-Bold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-BlackItalic-700";
+	src: local("SourceSansPro-BlackItalic-700"),
+		url("./assets/fonts/SourceSansPro-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-Regular-400";
+	src: local("SourceSansPro-Regular-400"),
+		url("./assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-RegularItalic-400";
+	src: local("SourceSansPro-RegularItalic-400"),
+		url("./assets/fonts/SourceSansPro-Italic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-Light-300";
+	src: local("SourceSansPro-Light-300"),
+		url("./assets/fonts/SourceSansPro-Light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-LightItalic-300";
+	src: local("SourceSansPro-LightItalic-300"),
+		url("./assets/fonts/SourceSansPro-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-ExtraLight-100";
+	src: local("SourceSansPro-ExtraLight-100"),
+		url("./assets/fonts/SourceSansPro-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "SourceSansPro-ExtraLightItalic-100";
+	src: local("SourceSansPro-ExtraLightItalic-100"),
+		url("./assets/fonts/SourceSansPro-ExtraLightItalic.ttf")
+			format("truetype");
+}
+
+body,
+html {
+	font-size: 10px;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	background-color: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+p,
+span {
+	font-family: $font-weight-regular;
+	font-size: 1.8rem;
+}
+
+h1 {
+	font-family: $font-weight-bolder;
+}
+h2 {
+	font-family: $font-weight-bold;
+}
+h3 {
+	font-family: $font-weight-medium;
+}
+h4 {
+	font-family: $font-weight-regular;
+}
+h5,
+h6 {
+	font-family: $font-weight-light;
+}
+
+.section_name {
+	color: $primary-color-dark;
+}
+
+.section_major_heading {
+	font-size: 4rem;
+	font-family: $font-weight-bold;
+	color: $secondary-color;
+}
