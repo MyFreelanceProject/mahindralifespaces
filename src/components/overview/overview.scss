@@ -1,0 +1,15 @@
+@import "../../variables";
+
+.overview_sec {
+	width: 100%;
+	position: relative;
+	height: 100%;
+	padding: 8rem 0;
+
+	.overview_heading {
+		width: 100%;
+		font-size: 5rem;
+		font-family: $font-weight-light;
+		text-align: center;
+	}
+}
