@@ -17,11 +17,15 @@ const Overview = () => {
 					</p>
 				</Row>
 				<Row>
-					<Grid container>
+					<Grid className="overview_sec2_cnt" container>
 						<Grid item lg={4}>
-							<h3>Discover homes with</h3>
-							<h2>unmatched luxury</h2>
-							<p>
+							<h3 className="overview_sec2_heading">
+								Discover homes with
+							</h3>
+							<h2 className="overview_sec2_subheading">
+								unmatched luxury
+							</h2>
+							<p className="overview_sec2_para">
 								Mahindra Luminare offers the rare luxury of corner homes
 								combined with wraparound balconies and a private lift
 								lobby. What stops you from living the life you desire?

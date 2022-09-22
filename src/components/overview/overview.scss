@@ -12,4 +12,27 @@
 		font-family: $font-weight-light;
 		text-align: center;
 	}
+
+	.overview_sec2_cnt {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0 10rem;
+
+		.overview_sec2_heading {
+			font-size: 2.5rem;
+			font-family: $font-weight-light;
+		}
+
+		.overview_sec2_subheading {
+			font-size: 4rem;
+			font-family: $font-weight-light;
+		}
+
+		.overview_sec2_para {
+			font-size: 1.8rem;
+			font-family: $font-weight-extraLight;
+		}
+	}
 }
