@@ -1,0 +1,96 @@
+@import '../../variables';
+
+.testimonial_sec {
+    padding: 10rem 0;
+
+    .sec_heading_cnt {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        .sec_heading {
+            font-size:4rem;
+            font-family: $font-weight-bold;
+        }
+    }
+   
+    .client_item {
+
+        .client_img {
+            border-radius: 200px;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .about_client {
+            text-align: left;
+            padding: 2rem;
+
+            h4 {
+                position: relative;
+                padding-top: 2rem;
+
+                &:before {
+                    content: "";
+                    height: 2px;
+                    width: 50px;
+                    background-color: black;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.test_carousel {
+    width: 70%;
+}
+
+
+.next_btn_test {
+    width: 50px;
+    height: 50px;
+    position: absolute !important;
+    left: -50px;
+    bottom: 50%;
+
+    &:disabled {
+        svg {
+            width: 30px;
+            height: 30px;
+            opacity: 0.5;
+        }
+    }
+    svg {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+}
+
+.prev_btn_test {
+    width: 50px;
+    height: 50px;
+    position: absolute !important;
+    right: -50px;
+    bottom: 50%;
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+    &:disabled {
+        svg {
+            width: 30px;
+            height: 30px;
+            opacity: 0.5;
+        }
+    }
+}

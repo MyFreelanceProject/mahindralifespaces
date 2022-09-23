@@ -1,0 +1,99 @@
+@import '../../variables';
+
+
+.green_sec {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 10rem;
+    padding-right: 0;
+
+    .green_text_cnt {
+        h2 {
+            font-size: 4.5rem;
+            font-family: $font-weight-regular;
+        }
+
+        h4 {
+            font-size: 1.8rem;
+            font-family: $font-weight-regular;
+        }
+    }
+    
+    .certificate_cnt {
+        p {
+            font-size: 2.4rem;
+            font-family: $font-weight-regular;
+        }
+    }
+
+    .slide {
+        margin: 0 1rem;
+    }
+
+    .green_carousel_img_cnt {
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2; 
+            background-color: rgba(0,0,0,0.2);
+        }
+        .details {
+            position: absolute;
+            top: 50%;
+            left: 50%;z-index: 10;
+            transform: translate(-50%, -50%);
+            font-family: $font-weight-bold;
+            color: #fff;
+        }
+    }
+}
+
+
+.carousel.carousel-slider {
+	overflow: visible !important;
+	.next_btn_green {
+		width: 50px;
+		height: 50px;
+		position: absolute !important;
+		left: 0px;
+		bottom: -50px;
+
+		&:disabled {
+			svg {
+				width: 30px;
+				height: 30px;
+				opacity: 0.5;
+			}
+		}
+		svg {
+			width: 30px;
+			height: 30px;
+			opacity: 1;
+		}
+	}
+
+	.prev_btn_green {
+		width: 50px;
+		height: 50px;
+		position: absolute !important;
+		left: 50px;
+		bottom: -50px;
+
+		svg {
+			width: 30px;
+			height: 30px;
+		}
+		&:disabled {
+			svg {
+				width: 30px;
+				height: 30px;
+				opacity: 0.5;
+			}
+		}
+	}
+}

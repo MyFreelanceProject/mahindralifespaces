@@ -66,8 +66,17 @@
 .plan_btn,
 .check_btn {
 	font-family: $font-weight-regular;
-	font-size: 1.4rem !important;
-	background-color: red !important;
+	font-size: 1.3rem !important;
+	color: #fff !important;
+	background-color: #E31837 !important;
+}
+
+.plan_btn.active,
+.check_btn.active {
+	font-family: $font-weight-regular;
+	font-size: 1.3rem !important;
+	color: #E31837!important;
+	background-color: rgb(255, 255, 255) !important;
 }
 
 .area_list {

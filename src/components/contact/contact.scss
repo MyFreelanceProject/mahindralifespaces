@@ -1,0 +1,42 @@
+@import '../../variables';
+
+.contact_sec {
+    background-color: #E31837;
+    color: white;
+    padding: 10rem 0;
+    
+    .sec_heading {
+        font-size: 4rem;
+        text-align: center;
+        font-family: $font-weight-bold;
+    }
+
+    .MuiTextField-root {
+        margin: 1rem 0;
+        .MuiInputBase-root {
+                font-family: $font-weight-regular;
+                color: white;
+                font-size: 2rem;
+        }
+        label {
+            font-family: $font-weight-regular;
+            color: white;
+            font-size: 1.4rem;
+        }
+       
+    }
+
+    .tnc {
+        font-family: $font-weight-light;
+        font-size: 1.4rem;
+    }
+    .submit_btn {
+        font-family: $font-weight-bold;
+        border-radius: 0;
+        background-color: white;
+        color: #E31837;
+        font-size: 1.4rem;
+        padding: 1rem 3rem;
+
+    }
+}
