@@ -36,3 +36,32 @@
 		}
 	}
 }
+
+@media screen and (max-width: 600px) {
+.overview_sec {
+	.overview_heading {
+		font-size: 4rem;
+		font-family: $font-weight-light;
+		margin-bottom: 3rem;
+	}
+
+	.overview_sec2_cnt {
+		padding: 0 2rem;
+
+		.overview_sec2_heading {
+			font-size: 2rem;
+			
+		}
+
+		.overview_sec2_subheading {
+			font-size: 3.5rem;
+			
+		}
+
+		.overview_sec2_para {
+			font-size: 1.8rem;
+			font-family: $font-weight-light;
+		}
+	}
+}
+}

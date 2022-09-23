@@ -1,0 +1,24 @@
+@import '../../variables';
+
+.disclaimer_sec {
+    padding: 10rem 0;
+    background-color: #160205;
+    color: white;
+   
+    .disclaimer_text {
+        font-size: 1.6rem;
+        font-family: $font-weight-light;
+
+        a {
+            color: #E31837;
+        }
+    }
+    .disclaimer_btn {
+        margin-top: 3rem;
+        background-color: #E31837;
+        border-radius: 0;
+        font-size: 1.4rem;
+        padding: 0.5rem 4rem;
+        font-family: $font-weight-regular;
+    }
+}

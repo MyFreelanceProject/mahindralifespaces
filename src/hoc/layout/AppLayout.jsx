@@ -9,6 +9,8 @@ import Experience from "../../components/experience/Experience";
 import Green from "../../components/green/Green";
 import Testimonials from "../../components/testimonials/Testimonials";
 import Contact from "../../components/contact/Contact";
+import Disclaimer from "../../components/disclaimer/Disclaimer";
+import Footer from "../../components/Footer/Footer";
 const AppLayout = () => {
   return (
     <>
@@ -23,6 +25,8 @@ const AppLayout = () => {
       <Green />
       <Testimonials />
       <Contact />
+      <Disclaimer />
+      <Footer />
     </>
   );
 };

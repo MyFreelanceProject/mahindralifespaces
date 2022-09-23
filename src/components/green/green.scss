@@ -54,6 +54,16 @@
 }
 
 
+@media screen and (max-width: 600px) {
+    .green_sec {
+        padding: 10rem 5rem;
+
+        .green_text_cnt {
+            margin-bottom: 4rem;
+        }
+    }
+}
+
 .carousel.carousel-slider {
 	overflow: visible !important;
 	.next_btn_green {

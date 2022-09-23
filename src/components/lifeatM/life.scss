@@ -18,6 +18,11 @@
 		font-size: 1.6rem;
 		align-items: center;
 		font-family: $font-weight-regular;
+		border-radius: 0;
+
+		&.active {
+			border-bottom: 4px solid red;
+		}
 	}
 }
 

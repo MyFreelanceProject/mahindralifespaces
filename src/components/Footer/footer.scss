@@ -1,0 +1,34 @@
+@import '../../variables';
+
+.footer_sec {
+    background-color: #2F3031;
+    padding: 5rem 0 3rem 0;
+
+    .MuiStack-root {
+        margin: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        .MuiStack-root {
+            margin: 3rem 0;
+        }
+     
+    }
+    .media_icon {
+        border-radius: 50px;
+        background-color: #828385;
+        
+        &:hover {
+            background-color: #3d76e8;
+        }
+    }
+
+    .credits {
+        p {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: $font-weight-regular;
+            font-size: 1.4rem;
+        }
+    }
+}

@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./life.scss";
-import {Container, Row} from "reactstrap";
-import {Box, Stack} from "@mui/system";
-import {Button, Grid} from "@mui/material";
+import { Container, Row } from "reactstrap";
+import { Box, Stack } from "@mui/system";
+import { Button, Grid } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import CabinIcon from "@mui/icons-material/Cabin";
 import PoolIcon from "@mui/icons-material/Pool";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
-import {Carousel} from "react-responsive-carousel";
+import { Carousel } from "react-responsive-carousel";
 
 import ext1 from "../../assets/images/Luminare_Actual_Images-EXT1.webp";
 import ext2 from "../../assets/images/Luminare-tower-B_Landing-page-_1-1.webp";
@@ -41,139 +41,135 @@ import ReactPlayer from "react-player";
 const ext = [ext1, ext2, ext3, ext4, ext5];
 const interior = [int1, int2, int3, int4, int5];
 const ami = [
-	ami1,
-	ami2,
-	ami3,
-	ami4,
-	ami5,
-	ami6,
-	ami7,
-	ami8,
-	ami9,
-	ami10,
-	ami11,
-	ami12,
+  ami1,
+  ami2,
+  ami3,
+  ami4,
+  ami5,
+  ami6,
+  ami7,
+  ami8,
+  ami9,
+  ami10,
+  ami11,
+  ami12,
 ];
 
 const vidUrl = [
-	"https://www.youtube.com/watch?v=kOwWx8_0McY",
-	"https://www.youtube.com/watch?v=2j0Xen2gl1A",
+  "https://www.youtube.com/watch?v=kOwWx8_0McY",
+  "https://www.youtube.com/watch?v=2j0Xen2gl1A",
 ];
 const LifeAtM = () => {
-	const [categories, setCategories] = useState(ext);
-	const [mediaType, setMediaType] = useState(0);
-	return (
-		<section className="life_at_M">
-			<Container>
-				<Row className="head_cnt">
-					<h2>Experience life at Mahindra Luminare</h2>
-				</Row>
-				<Row>
-					<Stack direction="row">
-						<Grid container sx={{justifyContent: "center"}}>
-							<Grid item>
-								<Button
-									className="exp_btn"
-									variant="text"
-									sx={{color: "#000"}}
-									startIcon={<HomeIcon />}
-									onClick={() => {
-										setCategories(ext);
-										setMediaType(0);
-									}}
-								>
-									EXTERIOR
-								</Button>
-							</Grid>
-							<Grid item>
-								<Button
-									className="exp_btn"
-									variant="text"
-									sx={{color: "#000"}}
-									startIcon={<CabinIcon />}
-									onClick={() => {
-										setCategories(interior);
-										setMediaType(0);
-									}}
-								>
-									INTERIOR
-								</Button>
-							</Grid>
-							<Grid item>
-								<Button
-									className="exp_btn"
-									variant="text"
-									sx={{color: "#000"}}
-									startIcon={<PoolIcon />}
-									onClick={() => {
-										setCategories(ami);
-										setMediaType(0);
-									}}
-								>
-									SPECIAL AMENITIES
-								</Button>
-							</Grid>
-							<Grid item>
-								<Button
-									className="exp_btn"
-									variant="text"
-									sx={{color: "#000"}}
-									startIcon={<OndemandVideoIcon />}
-									onClick={() => {
-										setCategories(vidUrl);
-										setMediaType(1);
-									}}
-								>
-									VIDEOS
-								</Button>
-							</Grid>
-						</Grid>
-					</Stack>
-					<Box>
-						<Carousel
-							showThumbs={false}
-							showIndicators={false}
-							showStatus={false}
-							renderArrowPrev={(clickHandler, hasPrev, labelPrev) => (
-								<IconButton
-									className="next_btn_media"
-									aria-label="east-icon"
-									onClick={clickHandler}
-									disabled={!hasPrev}
-								>
-									<EastIcon sx={{color: "#fff"}} />
-								</IconButton>
-							)}
-							renderArrowNext={(clickHandler, hasPrev, labelPrev) => (
-								<IconButton
-									className="prev_btn_media"
-									aria-label="west-icon"
-									onClick={clickHandler}
-									disabled={!hasPrev}
-								>
-									<WestIcon sx={{color: "#fff"}} />
-								</IconButton>
-							)}
-						>
-							{categories.map((src, i) => {
-								return mediaType === 0 ? (
-									<img key={i} src={src} alt="carousel_img" />
-								) : (
-									<Box sx={{width: "100%", height: "100%"}}>
-										<ReactPlayer
-											key={i}
-											width="100%"
-											url={src}
-										></ReactPlayer>
-									</Box>
-								);
-							})}
-						</Carousel>
-					</Box>
-				</Row>
-			</Container>
-		</section>
-	);
+  const [categories, setCategories] = useState(ext);
+  const [mediaType, setMediaType] = useState(0);
+  return (
+    <section className="life_at_M">
+      <Container>
+        <Row className="head_cnt">
+          <h2>Experience life at Mahindra Luminare</h2>
+        </Row>
+        <Row>
+          <Stack direction="row">
+            <Grid container sx={{ justifyContent: "center" }}>
+              <Grid item>
+                <Button
+                  className={mediaType === 0 ? "exp_btn active" : "exp_btn"}
+                  variant="text"
+                  sx={{ color: "#000" }}
+                  startIcon={<HomeIcon />}
+                  onClick={() => {
+                    setCategories(ext);
+                    setMediaType(0);
+                  }}
+                >
+                  EXTERIOR
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button
+                  className={mediaType === 1 ? "exp_btn active" : "exp_btn"}
+                  variant="text"
+                  sx={{ color: "#000" }}
+                  startIcon={<CabinIcon />}
+                  onClick={() => {
+                    setCategories(interior);
+                    setMediaType(1);
+                  }}
+                >
+                  INTERIOR
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button
+                  className={mediaType === 2 ? "exp_btn active" : "exp_btn"}
+                  variant="text"
+                  sx={{ color: "#000" }}
+                  startIcon={<PoolIcon />}
+                  onClick={() => {
+                    setCategories(ami);
+                    setMediaType(2);
+                  }}
+                >
+                  SPECIAL AMENITIES
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button
+                  className={mediaType === 3 ? "exp_btn active" : "exp_btn"}
+                  variant="text"
+                  sx={{ color: "#000" }}
+                  startIcon={<OndemandVideoIcon />}
+                  onClick={() => {
+                    setCategories(vidUrl);
+                    setMediaType(3);
+                  }}
+                >
+                  VIDEOS
+                </Button>
+              </Grid>
+            </Grid>
+          </Stack>
+          <Box>
+            <Carousel
+              showThumbs={false}
+              showIndicators={false}
+              showStatus={false}
+              renderArrowPrev={(clickHandler, hasPrev, labelPrev) => (
+                <IconButton
+                  className="next_btn_media"
+                  aria-label="east-icon"
+                  onClick={clickHandler}
+                  disabled={!hasPrev}
+                >
+                  <EastIcon sx={{ color: "#fff" }} />
+                </IconButton>
+              )}
+              renderArrowNext={(clickHandler, hasPrev, labelPrev) => (
+                <IconButton
+                  className="prev_btn_media"
+                  aria-label="west-icon"
+                  onClick={clickHandler}
+                  disabled={!hasPrev}
+                >
+                  <WestIcon sx={{ color: "#fff" }} />
+                </IconButton>
+              )}
+            >
+              {categories.map((src, i) => {
+                return mediaType === 0 || mediaType === 1 || mediaType === 2 ? (
+                  <img key={i} src={src} alt="carousel_img" />
+                ) : (
+                  <Box sx={{ width: "100%", height: "100%" }}>
+                    <ReactPlayer key={i} width="100%" url={src}></ReactPlayer>
+                  </Box>
+                );
+              })}
+            </Carousel>
+          </Box>
+        </Row>
+      </Container>
+    </section>
+  );
 };
 
 export default LifeAtM;

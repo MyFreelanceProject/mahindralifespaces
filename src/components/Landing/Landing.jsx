@@ -18,7 +18,7 @@ const Landing = () => {
 			<div className="highlights">
 				<Container>
 					<Grid container spacing={2}>
-						<Grid className="highlight_item" item sm={6} lg={3}>
+						<Grid className="highlight_item" item sm={6} lg={3} xs={6}>
 							<Box className="highlight_item_head">
 								<LocationOnIcon sx={{fontSize: "1.5rem"}} />
 								<span>LOCATION</span>
@@ -27,7 +27,7 @@ const Landing = () => {
 								<p>Gurgaon</p>
 							</Box>
 						</Grid>
-						<Grid className="highlight_item" item sm={6} lg={3}>
+						<Grid className="highlight_item" item sm={6} lg={3} xs={6}>
 							<Box className="highlight_item_head">
 								<LocalOfferIcon sx={{fontSize: "1.5rem"}} />
 								<span>PRICE STARTING</span>
@@ -36,7 +36,7 @@ const Landing = () => {
 								<p>Price on request</p>
 							</Box>
 						</Grid>
-						<Grid className="highlight_item" item sm={6} lg={3}>
+						<Grid className="highlight_item" item sm={6} lg={3} xs={6}>
 							<Box className="highlight_item_head">
 								<AppsIcon sx={{fontSize: "1.5rem"}} />
 								<span>CONFIGURATION</span>
@@ -45,7 +45,7 @@ const Landing = () => {
 								<p>3 BHK</p>
 							</Box>
 						</Grid>
-						<Grid className="highlight_item" item sm={6} lg={3}>
+						<Grid className="highlight_item" item sm={6} lg={3} xs={6}>
 							<Box className="highlight_item_head">
 								<LocationCityIcon sx={{fontSize: "1.5rem"}} />
 								<span>TOWER</span>

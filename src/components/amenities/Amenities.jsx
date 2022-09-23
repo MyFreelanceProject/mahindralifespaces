@@ -64,37 +64,37 @@ const Amenities = () => {
               )}
             >
               <Grid className="page_one page" container spacing={2}>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo1} alt="logo" />
                     <p>Gymnasium</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo2} alt="logo" />
                     <p>Swimming pool with separate kids pool</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo3} alt="logo" />
                     <p>Spa</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo4} alt="logo" />
                     <p>Cards room</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo5} alt="logo" />
                     <p>AV room</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo6} alt="logo" />
                     <p>Play room</p>
@@ -102,37 +102,37 @@ const Amenities = () => {
                 </Grid>
               </Grid>
               <Grid className="page_one page" container spacing={2}>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo7} alt="logo" />
                     <p>Kids play area</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo8} alt="logo" />
                     <p>Square court</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo9} alt="logo" />
                     <p>Tennis court</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo10} alt="logo" />
                     <p>Half Basketball court</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo11} alt="logo" />
                     <p>Restaurant</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo12} alt="logo" />
                     <p>Amphitheatre</p>
@@ -140,13 +140,13 @@ const Amenities = () => {
                 </Grid>
               </Grid>
               <Grid className="page_one page" container spacing={2}>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo13} alt="logo" />
                     <p>Urban river landscape features &amp; gazebos</p>
                   </Stack>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} xs={6} sm={6} md={4}>
                   <Stack className="item">
                     <img src={logo14} alt="logo" />
                     <p>Banquet facilities</p>
