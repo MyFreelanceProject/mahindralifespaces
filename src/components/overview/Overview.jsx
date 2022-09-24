@@ -7,7 +7,7 @@ import overview_img from "../../assets/images/08-Wraparound-Balconies.webp";
 
 const Overview = () => {
   return (
-    <section className="overview_sec">
+    <section id="overview" className="overview_sec">
       <Container>
         <Row>
           <p className="overview_heading">

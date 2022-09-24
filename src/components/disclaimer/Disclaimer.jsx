@@ -36,7 +36,11 @@ const Disclaimer = () => {
               available on
             </p>
             <p className="disclaimer_text">
-              <a href="https://haryanarera.gov.in">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://haryanarera.gov.in"
+              >
                 https://haryanarera.gov.in
               </a>
             </p>

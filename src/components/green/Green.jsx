@@ -36,7 +36,7 @@ const images = [
 
 const Green = () => {
   return (
-    <section className="green_sec">
+    <section id="sustain" className="green_sec">
       <Grid container>
         <Grid
           item

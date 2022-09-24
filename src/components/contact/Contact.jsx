@@ -2,13 +2,12 @@ import React from "react";
 import "./contact.scss";
 import { Col, Container, Row } from "reactstrap";
 import TextField from "@mui/material/TextField";
-import MenuItem from "@mui/material/MenuItem";
 import { Button } from "@mui/material";
 import { Stack } from "@mui/system";
 
 const Contact = () => {
   return (
-    <section className="contact_sec">
+    <section id="contact" className="contact_sec">
       <Container>
         <Row>
           <Col lg="12">
@@ -38,38 +37,6 @@ const Contact = () => {
                 fullWidth={true}
                 type="email"
                 label="Email Id"
-                variant="standard"
-              />
-            </Col>
-            <Col lg="4" md="6" sm="12">
-              <TextField
-                fullWidth={true}
-                select
-                label="City"
-                variant="standard"
-                value={"Gurgaon"}
-              >
-                <MenuItem value="Gurgaon"> Gurgaon</MenuItem>
-              </TextField>
-            </Col>
-            <Col lg="4" md="6" sm="12">
-              <TextField
-                fullWidth={true}
-                select
-                label="Property"
-                variant="standard"
-                value={"Mahindra Luminare, Gurgaon"}
-              >
-                <MenuItem value="Mahindra Luminare, Gurgaon">
-                  Mahindra Luminare, Gurgaon
-                </MenuItem>
-              </TextField>
-            </Col>
-            <Col lg="4" md="6" sm="12">
-              <TextField
-                fullWidth={true}
-                type="text"
-                label="Message"
                 variant="standard"
               />
             </Col>

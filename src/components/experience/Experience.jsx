@@ -3,13 +3,11 @@ import "./experience.scss";
 import { Container, Row } from "reactstrap";
 import { Box, Stack } from "@mui/system";
 import { Button, Grid } from "@mui/material";
-
 import HomeIcon from "@mui/icons-material/Home";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 import planA from "../../assets/images/01_Luminare_TowerB_V1_3-BHK-A-Unit-Plan.webp";
 import planB from "../../assets/images/01_Luminare_TowerB_V1_3-BHK-B-Unit-Plan.webp";
-
 import floorplan from "../../assets/images/01_Luminare_TowerB_V1_3-BHK-Typical-floor-plan.webp";
 import masterplan from "../../assets/images/01_Luminare_TowerB_V1_Master-Layout.webp";
 
@@ -17,10 +15,10 @@ const Experience = () => {
   const [categories, setCategories] = useState(0);
   const [plan, setPlan] = useState("A");
   return (
-    <section className="experience_sec">
+    <section id="experience" className="experience_sec">
       <Container>
         <Row className="head_cnt">
-          <h2>Experience life at Mahindra Luminare</h2>
+          <h2>Experience your new home</h2>
         </Row>
         <Row>
           <Stack direction="row">

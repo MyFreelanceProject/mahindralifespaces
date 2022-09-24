@@ -63,7 +63,7 @@ const LifeAtM = () => {
   const [categories, setCategories] = useState(ext);
   const [mediaType, setMediaType] = useState(0);
   return (
-    <section className="life_at_M">
+    <section id="gallery" className="life_at_M">
       <Container>
         <Row className="head_cnt">
           <h2>Experience life at Mahindra Luminare</h2>

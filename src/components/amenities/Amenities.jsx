@@ -27,7 +27,7 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 const Amenities = () => {
   return (
-    <section className="amenities">
+    <section id="amenities" className="amenities">
       <Container>
         <Row className="head_cnt">
           <h2>Amenities for a lifestyle like none other</h2>
