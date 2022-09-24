@@ -26,6 +26,70 @@ const MbHeader = () => {
             </IconButton>
           </Box>
         </Stack>
+        <Stack
+          className="fixed_menu_bar"
+          direction={"row"}
+          sx={{ overflow: "auto" }}
+        >
+          <Button
+            className="menuitem"
+            variant="text"
+            onClick={() => {
+              setMenuState(false);
+            }}
+          >
+            <a href="#overview">Overview</a>
+          </Button>
+          <Button
+            className="menuitem"
+            variant="text"
+            onClick={() => {
+              setMenuState(false);
+            }}
+          >
+            <a href="#experience">Experience Homes</a>
+          </Button>
+
+          <Button
+            className="menuitem"
+            variant="text"
+            onClick={() => {
+              setMenuState(false);
+            }}
+          >
+            <a href="#amenities">Amenities</a>
+          </Button>
+
+          <Button
+            className="menuitem"
+            variant="text"
+            onClick={() => {
+              setMenuState(false);
+            }}
+          >
+            <a href="#gallery">Gallery </a>
+          </Button>
+
+          <Button
+            className="menuitem"
+            variant="text"
+            onClick={() => {
+              setMenuState(false);
+            }}
+          >
+            <a href="#sustain">Sustainability</a>
+          </Button>
+
+          <Button
+            className="menuitem"
+            variant="text"
+            onClick={() => {
+              setMenuState(false);
+            }}
+          >
+            <a href="#contact">Get In Touch</a>
+          </Button>
+        </Stack>
       </header>
 
       {menuState && (
@@ -96,7 +160,7 @@ const MbHeader = () => {
                 setMenuState(false);
               }}
             >
-              <a href="#schedule">Get In Touch</a>
+              <a href="#contact">Get In Touch</a>
             </Button>
           </Stack>
         </Box>

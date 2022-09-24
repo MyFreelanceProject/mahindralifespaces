@@ -1,6 +1,8 @@
 import React, { useLayoutEffect, useState } from "react";
 import "./applayout.scss";
-import Header from "../../components/header/Header";
+import HeaderTpLg from "../../components/header/HeaderTpLg";
+import HeaderTpSm from "../../components/header/HeaderTpSm";
+import HeaderBwLg from "../../components/header/HeaderBwLg";
 import Landing from "../../components/Landing/Landing";
 import Overview from "../../components/overview/Overview";
 import Amenities from "../../components/amenities/Amenities";
@@ -11,18 +13,16 @@ import Testimonials from "../../components/testimonials/Testimonials";
 import Contact from "../../components/contact/Contact";
 import Disclaimer from "../../components/disclaimer/Disclaimer";
 import Footer from "../../components/Footer/Footer";
-import MbHeader from "../../components/header/MbHeader";
 
 const AppLayout = () => {
   const [viewportWidth, setViewportWidth] = useState();
-  const [scroll, setScroll ] = useState(0)
+  const [scroll, setScroll] = useState(0);
 
   useLayoutEffect(() => {
-    
-    function changeBackground () {
+    function changeBackground() {
       setScroll(window.scrollY);
-    };
-  
+    }
+
     function updateSize() {
       setViewportWidth(window.innerWidth);
     }
@@ -36,13 +36,23 @@ const AppLayout = () => {
       window.removeEventListener("scroll", changeBackground);
       window.removeEventListener("resize", updateSize);
     };
-    
   }, [viewportWidth]);
 
+  console.log(scroll, viewportWidth);
   return (
     <>
       <div className="landing_page">
-        {viewportWidth > 900 ? <Header /> : <MbHeader />}
+        {scroll < 150 ? (
+          viewportWidth > 900 ? (
+            <HeaderTpLg />
+          ) : (
+            <HeaderTpSm />
+          )
+        ) : viewportWidth > 900 ? (
+          <HeaderBwLg />
+        ) : (
+          <HeaderTpSm />
+        )}
         <Landing viewportWidth={viewportWidth} />
       </div>
       <Overview />

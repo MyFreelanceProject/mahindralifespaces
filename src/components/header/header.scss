@@ -1,13 +1,10 @@
-.navbar {
-	font-size: 1.6rem;
+@import '../../variables';
 
-	.dropdown-item {
-		font-size: 1.6rem;
-	}
+.navbar.fix_top_lg {
+	font-size: 1.6rem;
 
 	.navbar-collapse {
 		justify-content: flex-end;
-		padding-right: 10rem;
 	}
 
 	.nav-item {
@@ -20,18 +17,36 @@
 		.nav-link {
 			text-transform: uppercase;
 			color: white;
+			font-family: $font-weight-regular;
+			font-size: 1.4rem;
+			letter-spacing: 1px;
 		}
 	}
+}
 
-	.navbar-text {
-		display: flex;
-		font-size: 1.6rem;
-		align-items: center;
-		cursor: pointer;
-		color: green;
+
+.navbar.fix_blw_lg {
+	font-size: 1.6rem;
+	background-color: #fff;
+	box-shadow: 0px 1px 20px 0px grey;
+	
+	.navbar-collapse {
+		justify-content: flex-end;
+	}
+
+	.nav-item {
+		margin: 0 1rem;
 
 		&:hover {
 			border-bottom: 1px solid #E31837;
+		}
+
+		.nav-link {
+			text-transform: uppercase;
+			color: black;
+			font-family: $font-weight-regular;
+			font-size: 1.4rem;
+			letter-spacing: 1px;
 		}
 	}
 }
@@ -47,6 +62,45 @@
 	z-index: 100;
 	width: 100%;
 
+	.fixed_menu_bar {
+		justify-content: flex-start;
+
+		.menuitem {
+			min-width: fit-content;
+			
+			a {
+				color: white;
+				text-decoration: none;
+				font-size: 1.2rem;
+
+				&:hover, &:active {
+					border-bottom: 1px solid red;
+				}
+			}
+
+		}
+
+		/* width */
+		&::-webkit-scrollbar {
+			height: 1px;
+		}
+		
+		/* Track */
+		&::-webkit-scrollbar-track {
+			background: rgb(21, 21, 21); 
+		}
+		
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			background: #191919 ; 
+		}
+		
+		/* Handle on hover */
+		&::-webkit-scrollbar-thumb:hover {
+			background: rgb(36, 36, 36); 
+		}
+	}
+	
 	.menuicon {
 		align-self: center;
         font-size: 30px;

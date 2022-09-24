@@ -15,7 +15,7 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar expand="md" fixed="top">
+    <Navbar className="fix_top_lg" expand="md" fixed="top">
       <Box
         display={"flex"}
         justifyContent="space-between"
@@ -41,7 +41,7 @@ const Header = () => {
               <NavLink href="#sustain">Sustainability</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#schedule">Get In Touch</NavLink>
+              <NavLink href="#contact">Get In Touch</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
