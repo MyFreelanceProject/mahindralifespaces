@@ -13,6 +13,11 @@
 
     .MuiTextField-root {
         margin: 1rem 0;
+        .MuiFormHelperText-root {
+            color: white;
+            font-size: 10px;
+        }
+
         .MuiInputBase-root {
                 font-family: $font-weight-regular;
                 color: white;

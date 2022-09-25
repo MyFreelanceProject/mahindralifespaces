@@ -18,7 +18,7 @@ import CTA from "../../components/cta/CTA";
 const AppLayout = () => {
   const [viewportWidth, setViewportWidth] = useState();
   const [scroll, setScroll] = useState(0);
-  
+
   useLayoutEffect(() => {
     function changeBackground() {
       setScroll(window.scrollY);
@@ -27,6 +27,7 @@ const AppLayout = () => {
     function updateSize() {
       setViewportWidth(window.innerWidth);
     }
+    
     window.addEventListener("resize", updateSize);
     updateSize();
 
