@@ -167,7 +167,12 @@ const Amenities = () => {
             }}
             variant="contained"
           >
-            DOWNLOAD BROCHURE
+            <a
+              style={{ color: "#fff", textDecoration: "none" }}
+              href="#contact"
+            >
+              DOWNLOAD BROCHURE
+            </a>
           </Button>
         </Row>
       </Container>

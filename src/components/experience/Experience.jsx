@@ -133,7 +133,12 @@ const Experience = () => {
                       className="check_btn"
                       variant="contained"
                     >
-                      CHECK PRICE
+                      <a
+                        style={{ color: "#fff", textDecoration: "none" }}
+                        href="#contact"
+                      >
+                        CHECK PRICE
+                      </a>
                     </Button>
                   </Stack>
                 </Grid>
