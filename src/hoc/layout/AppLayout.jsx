@@ -13,11 +13,12 @@ import Testimonials from "../../components/testimonials/Testimonials";
 import Contact from "../../components/contact/Contact";
 import Disclaimer from "../../components/disclaimer/Disclaimer";
 import Footer from "../../components/Footer/Footer";
+import CTA from "../../components/cta/CTA";
 
 const AppLayout = () => {
   const [viewportWidth, setViewportWidth] = useState();
   const [scroll, setScroll] = useState(0);
-
+  
   useLayoutEffect(() => {
     function changeBackground() {
       setScroll(window.scrollY);
@@ -38,7 +39,6 @@ const AppLayout = () => {
     };
   }, [viewportWidth]);
 
-  console.log(scroll, viewportWidth);
   return (
     <>
       <div className="landing_page">
@@ -64,6 +64,7 @@ const AppLayout = () => {
       <Contact />
       <Disclaimer />
       <Footer />
+      {viewportWidth < 700 && <CTA />}
     </>
   );
 };
