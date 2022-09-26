@@ -6,6 +6,9 @@ import { Button } from "@mui/material";
 import { Stack } from "@mui/system";
 import axios from "axios";
 
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Modal from "@mui/material/Modal";
+
 const Contact = () => {
   const CHARACTER_LIMIT = 10;
   const [email, setEmail] = useState("");
@@ -16,6 +19,7 @@ const Contact = () => {
 
   const [disabled, setDisabled] = useState(true);
   const [isSubmitted, setIsSubmitted] = useState(true);
+  const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
     axios({
@@ -35,7 +39,9 @@ const Contact = () => {
   }, [setEmails, isSubmitted]);
 
   useEffect(() => {
-    setDisabled(!(!(email === "") && !(phone === "") && !(name === "") && isChecked))
+    setDisabled(
+      !(!(email === "") && !(phone === "") && !(name === "") && isChecked)
+    );
   }, [email, phone, name, isChecked]);
 
   const submitRecord = () => {
@@ -70,10 +76,10 @@ const Contact = () => {
         }).then((response) => {
           if (response.status === 200) {
             setIsSubmitted(!isSubmitted);
+            handleOpen();
             setEmail("");
             setPhone("");
             setName("");
-            alert("Response submitted");
           }
         });
       }
@@ -94,87 +100,119 @@ const Contact = () => {
     setName(e.target.value);
   }
 
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <section id="contact" className="contact_sec">
-      <Container>
-        <Row>
-          <Col lg="12">
-            <h2 className="sec_heading">Get in touch with us</h2>
-          </Col>
-        </Row>
-        <form>
+    <>
+      <section id="contact" className="contact_sec">
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Stack
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: 400,
+              border: "2px solid #000",
+              boxShadow: 24,
+              p: 4,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              bgcolor: "white",
+            }}
+          >
+            <CheckCircleIcon color="success" sx={{ fontSize: 40 }} />
+            <h2>Thank you!</h2>
+            <p>Our team will connect with you shortly.</p>
+          </Stack>
+        </Modal>
+        <Container>
           <Row>
-            <Col lg="4" md="6" sm="12">
-              <TextField
-                fullWidth={true}
-                type="text"
-                label="Name"
-                variant="standard"
-                onChange={handleName}
-              />
-            </Col>
-            <Col lg="4" md="6" sm="12">
-              <TextField
-                inputProps={{
-                  maxLength: CHARACTER_LIMIT,
-                }}
-                size="large"
-                value={phone}
-                fullWidth={true}
-                type="tel"
-                label="Phone number"
-                variant="standard"
-                onChange={handlePhone}
-                helperText={"max-length - 10 digits"}
-              />
-            </Col>
-            <Col lg="4" md="6" sm="12">
-              <TextField
-                fullWidth={true}
-                type="email"
-                label="Email Id"
-                variant="standard"
-                onChange={handleEmail}
-              />
-            </Col>
-            <Col lg="12" md="12" sm="12">
-              <Stack direction={"row"} sx={{ marginTop: "4rem" }}>
-                <input
-                  type="checkbox"
-                  style={{ marginTop: "5px", marginRight: "5px" }}
-                  checked={isChecked}
-                  onChange={() => setIsChecked(!isChecked)}
-                />
-                <p className="tnc">
-                  By clicking Submit, you consent to your information being
-                  shared with Mahindra & Mahindra and its group companies, in
-                  accordance to our privacy policy. The information shall be
-                  maintained in full confidentiality and shall not be shared
-                  with any third party. We may use this information to get in
-                  touch with you regarding your enquiry via Email, SMS,
-                  WhatsApp.
-                </p>
-              </Stack>
-            </Col>
-            <Col
-              lg="12"
-              md="12"
-              sm="12"
-              style={{ textAlign: "center", margin: "2rem 0" }}
-            >
-              <Button
-                onClick={submitRecord}
-                className="submit_btn"
-                variant="contained"
-                disabled={disabled}
-              >
-                SUBMIT
-              </Button>
+            <Col lg="12">
+              <h2 className="sec_heading">Get in touch with us</h2>
             </Col>
           </Row>
-        </form>
-      </Container>
-    </section>
+          <form>
+            <Row>
+              <Col lg="4" md="6" sm="12">
+                <TextField
+                  fullWidth={true}
+                  type="text"
+                  label="Name"
+                  variant="standard"
+                  onChange={handleName}
+                />
+              </Col>
+              <Col lg="4" md="6" sm="12">
+                <TextField
+                  inputProps={{
+                    maxLength: CHARACTER_LIMIT,
+                  }}
+                  size="large"
+                  value={phone}
+                  fullWidth={true}
+                  type="tel"
+                  label="Phone number"
+                  variant="standard"
+                  onChange={handlePhone}
+                  helperText={"max-length - 10 digits"}
+                />
+              </Col>
+              <Col lg="4" md="6" sm="12">
+                <TextField
+                  fullWidth={true}
+                  type="email"
+                  label="Email Id"
+                  variant="standard"
+                  onChange={handleEmail}
+                />
+              </Col>
+              <Col lg="12" md="12" sm="12">
+                <Stack direction={"row"} sx={{ marginTop: "4rem" }}>
+                  <input
+                    type="checkbox"
+                    style={{ marginTop: "5px", marginRight: "5px" }}
+                    checked={isChecked}
+                    onChange={() => setIsChecked(!isChecked)}
+                  />
+                  <p className="tnc">
+                    By clicking Submit, you consent to your information being
+                    shared with Mahindra & Mahindra and its group companies, in
+                    accordance to our privacy policy. The information shall be
+                    maintained in full confidentiality and shall not be shared
+                    with any third party. We may use this information to get in
+                    touch with you regarding your enquiry via Email, SMS,
+                    WhatsApp.
+                  </p>
+                </Stack>
+              </Col>
+              <Col
+                lg="12"
+                md="12"
+                sm="12"
+                style={{ textAlign: "center", margin: "2rem 0" }}
+              >
+                <Button
+                  onClick={submitRecord}
+                  className="submit_btn"
+                  variant="contained"
+                  disabled={disabled}
+                >
+                  SUBMIT
+                </Button>
+              </Col>
+            </Row>
+          </form>
+        </Container>
+      </section>
+    </>
   );
 };
 
