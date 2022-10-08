@@ -9,7 +9,7 @@ import Amenities from "../../components/amenities/Amenities";
 import LifeAtM from "../../components/lifeatM/LifeAtM";
 import Experience from "../../components/experience/Experience";
 import Green from "../../components/green/Green";
-import Testimonials from "../../components/testimonials/Testimonials";
+// import Testimonials from "../../components/testimonials/Testimonials";
 import Contact from "../../components/contact/Contact";
 import Disclaimer from "../../components/disclaimer/Disclaimer";
 import Footer from "../../components/Footer/Footer";
@@ -27,7 +27,7 @@ const AppLayout = () => {
     function updateSize() {
       setViewportWidth(window.innerWidth);
     }
-    
+
     window.addEventListener("resize", updateSize);
     updateSize();
 
@@ -61,11 +61,10 @@ const AppLayout = () => {
       <LifeAtM />
       <Experience />
       <Green />
-      <Testimonials />
       <Contact />
       <Disclaimer />
       <Footer />
-      {viewportWidth < 700 && <CTA />}
+      <CTA />
     </>
   );
 };

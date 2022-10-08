@@ -111,22 +111,41 @@ const Experience = () => {
                   <Stack className="area_list">
                     <Box className="area_item">
                       <p className="head">RERA Carpet Area</p>
-                      <p>
-                        150.88 Sqm <span>(1624.06 SQ.FT.)</span>
-                      </p>
+                      {plan === "A" ? (
+                        <p>
+                          150.88 Sqm <span>(1624.06 SQ.FT.)</span>
+                        </p>
+                      ) : (
+                        <p>
+                          142.57 Sqm <span>(1534.61 SQ.FT.)</span>
+                        </p>
+                      )}
                     </Box>
                     <Box className="area_item">
                       <p className="head">EBVT Area</p>
-                      <p>
-                        62.83 Sqm
-                        <span>(676.3 SQ.FT.)</span>
-                      </p>
+                      {plan === "A" ? (
+                        <p>
+                          62.83 Sqm
+                          <span>(676.3 SQ.FT.)</span>
+                        </p>
+                      ) : (
+                        <p>
+                          59.75 Sqm
+                          <span>(643.14 SQ.FT.)</span>
+                        </p>
+                      )}
                     </Box>
                     <Box className="area_item">
                       <p className="head">Aggregate Area</p>
-                      <p>
-                        213.71 Sqm <span>(2300.35 SQ.FT.)</span>
-                      </p>
+                      {plan === "A" ? (
+                        <p>
+                          213.71 Sqm <span>(2300.35 SQ.FT.)</span>
+                        </p>
+                      ) : (
+                        <p>
+                          202.32 Sqm <span>(2177.75 SQ.FT.)</span>
+                        </p>
+                      )}
                     </Box>
                     <Button
                       sx={{ borderRadius: 0, padding: "1rem 0" }}

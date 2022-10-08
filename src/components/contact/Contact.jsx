@@ -16,7 +16,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   const [emails, setEmails] = useState("");
-
+  const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [isSubmitted, setIsSubmitted] = useState(true);
   const [open, setOpen] = React.useState(false);
@@ -24,9 +24,9 @@ const Contact = () => {
   useEffect(() => {
     axios({
       method: "get",
-      url: "https://api.airtable.com/v0/appRH3BAe1uquqZV5/Leads?maxRecords=2000&view=Grid%20view",
+      url: "https://api.airtable.com/v0/appDRVMDP96w57cqJ/Leads?maxRecords=2000&view=All%20campaigns",
       headers: {
-        Authorization: "Bearer keyjjd5EU0mDTIyh8",
+        Authorization: "Bearer keyxMiCE6VOlqipzo",
       },
     }).then((response) => {
       if (response.status === 200) {
@@ -60,26 +60,35 @@ const Contact = () => {
       if (isValid) {
         axios({
           method: "post",
-          url: "https://api.airtable.com/v0/appRH3BAe1uquqZV5/Leads",
+          url: "https://api.airtable.com/v0/appDRVMDP96w57cqJ/Leads",
           headers: {
-            Authorization: "Bearer keyjjd5EU0mDTIyh8",
+            Authorization: "Bearer keyxMiCE6VOlqipzo",
             "Content-Type": "application/json",
           },
           data: {
             records: [
               {
-                fields: { Name: name, Phone: phone, Email: email },
+                fields: {
+                  Name: name,
+                  Phone: phone,
+                  Email: email,
+                  Message: message,
+                },
               },
             ],
             typecast: true,
           },
         }).then((response) => {
           if (response.status === 200) {
+            console.log("hi");
             setIsSubmitted(!isSubmitted);
             handleOpen();
             setEmail("");
             setPhone("");
             setName("");
+            setMessage("");
+          } else {
+            alert("Error! Please try again.");
           }
         });
       }
@@ -98,6 +107,10 @@ const Contact = () => {
 
   function handleName(e) {
     setName(e.target.value);
+  }
+
+  function handleMessage(e) {
+    setMessage(e.target.value);
   }
 
   const handleOpen = () => setOpen(true);
@@ -141,16 +154,17 @@ const Contact = () => {
           </Row>
           <form>
             <Row>
-              <Col lg="4" md="6" sm="12">
+              <Col lg="6" md="6" sm="12">
                 <TextField
                   fullWidth={true}
+                  value={name}
                   type="text"
                   label="Name"
                   variant="standard"
                   onChange={handleName}
                 />
               </Col>
-              <Col lg="4" md="6" sm="12">
+              <Col lg="6" md="6" sm="12">
                 <TextField
                   inputProps={{
                     maxLength: CHARACTER_LIMIT,
@@ -165,13 +179,24 @@ const Contact = () => {
                   helperText={"max-length - 10 digits"}
                 />
               </Col>
-              <Col lg="4" md="6" sm="12">
+              <Col lg="6" md="6" sm="12">
                 <TextField
                   fullWidth={true}
+                  value={email}
                   type="email"
                   label="Email Id"
                   variant="standard"
                   onChange={handleEmail}
+                />
+              </Col>
+              <Col lg="6" md="6" sm="12">
+                <TextField
+                  fullWidth={true}
+                  type="text"
+                  value={message}
+                  label="Message/Remark"
+                  variant="standard"
+                  onChange={handleMessage}
                 />
               </Col>
               <Col lg="12" md="12" sm="12">

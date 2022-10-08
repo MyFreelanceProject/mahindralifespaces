@@ -3,3 +3,10 @@
 .cta_btns { 
     font-family: $font-weight-regular !important;
 }
+.cta_iconbtn {
+    box-shadow: 0 0 20px 2px #6abe26;
+    
+    &:hover {
+        background-color: #6abe26 !important;
+    }
+}

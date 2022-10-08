@@ -58,7 +58,7 @@ const Landing = (props) => {
                 <span>TOWER</span>
               </Box>
               <Box>
-                <p>1</p>
+                <p>Tower B – Altaris</p>
               </Box>
             </Grid>
           </Grid>
