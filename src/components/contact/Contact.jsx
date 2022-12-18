@@ -1,42 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./contact.scss";
 import { Col, Container, Row } from "reactstrap";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import { Stack } from "@mui/system";
 import axios from "axios";
-
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import Modal from "@mui/material/Modal";
-
+import { useNavigate } from "react-router-dom";
+import { Stack } from "@mui/system";
+import { SetIsRedirectAllowed } from "../../App";
 const Contact = () => {
   const CHARACTER_LIMIT = 10;
+  const navigate = useNavigate();
+  const setIsRedirectAllowed = useContext(SetIsRedirectAllowed);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-  const [emails, setEmails] = useState("");
+  // const [emails, setEmails] = useState("");
+
   const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [isSubmitted, setIsSubmitted] = useState(true);
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
-  useEffect(() => {
-    axios({
-      method: "get",
-      url: "https://api.airtable.com/v0/appDRVMDP96w57cqJ/Leads?maxRecords=2000&view=All%20campaigns",
-      headers: {
-        Authorization: "Bearer keyxMiCE6VOlqipzo",
-      },
-    }).then((response) => {
-      if (response.status === 200) {
-        let records = response.data.records.map((record) => {
-          return record.fields.Email;
-        });
-        setEmails(records);
-      }
-    });
-  }, [setEmails, isSubmitted]);
+  // useEffect(() => {
+  //   axios({
+  //     method: "get",
+  //     url: "https://api.airtable.com/v0/appDRVMDP96w57cqJ/Leads?maxRecords=2000&view=All%20campaigns",
+  //     headers: {
+  //       Authorization: "Bearer keyxMiCE6VOlqipzo",
+  //     },
+  //   }).then((response) => {
+  //     if (response.status === 200) {
+  //       let records = response.data.records.map((record) => {
+  //         return record.fields.Email;
+  //       });
+  //       setEmails(records);
+  //     }
+  //   });
+  // }, [setEmails, isSubmitted]);
 
   useEffect(() => {
     setDisabled(
@@ -45,57 +46,57 @@ const Contact = () => {
   }, [email, phone, name, isChecked]);
 
   const submitRecord = () => {
-    let isValid = true;
-    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      emails.map((mailid) => {
-        if (mailid === email) {
-          isValid = false;
-          alert("ID already registered");
-          return false;
-        } else {
-          return true;
-        }
-      });
+    // let isValid = true;
+    // if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    //   emails.map((mailid) => {
+    //     if (mailid === email) {
+    //       isValid = false;
+    //       alert("ID already registered");
+    //       return false;
+    //     } else {
+    //       return true;
+    //     }
+    //   });
 
-      if (isValid) {
-        axios({
-          method: "post",
-          url: "https://api.airtable.com/v0/appDRVMDP96w57cqJ/Leads",
-          headers: {
-            Authorization: "Bearer keyxMiCE6VOlqipzo",
-            "Content-Type": "application/json",
+    //   if (isValid) {
+    axios({
+      method: "post",
+      url: "https://api.airtable.com/v0/appDRVMDP96w57cqJ/Leads",
+      headers: {
+        Authorization: "Bearer keyxMiCE6VOlqipzo",
+        "Content-Type": "application/json",
+      },
+      data: {
+        records: [
+          {
+            fields: {
+              Name: name,
+              Phone: phone,
+              Email: email,
+              Message: message,
+            },
           },
-          data: {
-            records: [
-              {
-                fields: {
-                  Name: name,
-                  Phone: phone,
-                  Email: email,
-                  Message: message,
-                },
-              },
-            ],
-            typecast: true,
-          },
-        }).then((response) => {
-          if (response.status === 200) {
-            console.log("hi");
-            setIsSubmitted(!isSubmitted);
-            handleOpen();
-            setEmail("");
-            setPhone("");
-            setName("");
-            setMessage("");
-          } else {
-            alert("Error! Please try again.");
-          }
-        });
+        ],
+        typecast: true,
+      },
+    }).then((response) => {
+      if (response.status === 200) {
+        setIsSubmitted(!isSubmitted);
+        setIsRedirectAllowed(true)
+        navigate("/thank-you");
+        setEmail("");
+        setPhone("");
+        setName("");
+        setMessage("");
+      } else {
+        alert("Error! Please try again.");
       }
-    } else {
-      alert("You have entered an invalid email address!");
-    }
+    });
   };
+  // } else {
+  //   alert("You have entered an invalid email address!");
+  // }
+  // };
 
   function handlePhone(e) {
     setPhone(e.target.value);
@@ -113,39 +114,12 @@ const Contact = () => {
     setMessage(e.target.value);
   }
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
 
   return (
     <>
       <section id="contact" className="contact_sec">
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Stack
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: 400,
-              border: "2px solid #000",
-              boxShadow: 24,
-              p: 4,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              bgcolor: "white",
-            }}
-          >
-            <CheckCircleIcon color="success" sx={{ fontSize: 40 }} />
-            <h2>Thank you!</h2>
-            <p>Our team will connect with you shortly.</p>
-          </Stack>
-        </Modal>
         <Container>
           <Row>
             <Col lg="12">
