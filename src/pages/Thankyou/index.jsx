@@ -1,9 +1,15 @@
 import React from "react";
 import { Stack } from "@mui/system";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Thankyou = () => {
+  const navigate = useNavigate();
+  function handleRedirect() {
+    navigate("/");
+  }
+
   return (
     <Box
       sx={{
@@ -33,6 +39,7 @@ const Thankyou = () => {
         <CheckCircleIcon color="success" sx={{ fontSize: 40 }} />
         <h2>Thank you!</h2>
         <p>Our team will connect with you shortly.</p>
+        <Button onClick={handleRedirect}>Redirect to HOME PAGE</Button>
       </Stack>
     </Box>
   );

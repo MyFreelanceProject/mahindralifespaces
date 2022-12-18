@@ -82,7 +82,7 @@ const Contact = () => {
     }).then((response) => {
       if (response.status === 200) {
         setIsSubmitted(!isSubmitted);
-        setIsRedirectAllowed(true)
+        setIsRedirectAllowed(true);
         navigate("/thank-you");
         setEmail("");
         setPhone("");
