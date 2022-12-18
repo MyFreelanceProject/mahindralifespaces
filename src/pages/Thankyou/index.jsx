@@ -3,6 +3,7 @@ import { Stack } from "@mui/system";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import CTA from "../../components/cta/CTA";
 
 const Thankyou = () => {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ const Thankyou = () => {
         <p>Our team will connect with you shortly.</p>
         <Button onClick={handleRedirect}>Redirect to HOME PAGE</Button>
       </Stack>
+      <CTA />
     </Box>
   );
 };
